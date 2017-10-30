@@ -1,0 +1,42 @@
+<div class="container">
+	<h3>movie</h3>
+	<table class="table">
+	<tr>
+		
+			<th>ID</th>
+			<th>title</th>
+			<th>release_date</th>
+			<th>duration</th>
+			<th>genere</th>
+			<th>Synopsis</th>
+			<th>Show</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		
+	</tr>
+	<% _.each(movies, function(movie){ %>
+		<tr data-id="<%= movie.id %>" data-model="movie">
+		
+			<td><%= movie.id %></td>
+			<td><%= movie.title %></td>
+			<td><%= movie.release_date %></td>
+			<td><%= movie.duration %></td>
+			<td><%= movie.genere %></td>
+			<td><%= movie.Synopsis %></td>
+			<td><a href="/movie/show/<%= movie.id %>" class="btn btn-sn btn-primary"> Show</a></td>
+			<td><a href="/movie/edit/<%= movie.id %>" class="btn btn-sn btn-warning"> Edit</a></td>
+			<td>
+				<form action="/movie/destroy/<%= movie.id %>" method="POST">
+					<input type="hidden" name="_method" value="delete"/>
+					<input type="submit" class="btn btn-sn btn-danger" value="Delete"/>
+					<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+				</form>
+			</td>
+			
+		</tr>
+
+		<% }) %>
+
+	</table>
+
+</div>

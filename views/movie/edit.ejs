@@ -1,0 +1,15 @@
+<h3><a href="/movie">Movie List</a></h3>
+<form action="/movie/update/<%= movie.id %>" method="POST" class="form-signin">
+	<h2 class="form-signin-heading">editing movie</h2>
+
+	
+
+	<input value="<%= movie.title %>" type="text" class="form-control" placeholder="Movie Title" name="title"> 
+	<input value="<%= movie.release_date %>" type="date" class="form-control" placeholder="Release Date" name="release_date">
+	<input value="<%= movie.duration %>" type="time" class="form-control" placeholder="duration" name="duration">
+	<input value="<%= movie.genere %>" type="text" class="form-control" placeholder="genere" name="genere">
+	<input value="<%= movie.Synopsis %>" type="text" class="form-control" placeholder="Synopsis" name="Synopsis"><br/>
+
+	<input type="submit" value="Proceed" class="btn btn-lg btn-primary btn-block" value="Insert New Movie"/>
+	<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+</form>

@@ -1,0 +1,22 @@
+<h3><a href="/movie">Movie List</a></h3>
+<div class="container">
+	<h1><%= movie.title %></h1>
+	
+	<hr>
+	<h3>
+		release date: <%= movie.release_date %>
+	</h3>
+	<h3>
+		duration: <%= movie.duration %>
+	</h3>
+	<h3>
+		genere: <%= movie.genere %>
+	</h3>
+	<h3>
+		Synopsis: <%=  movie.Synopsis %>
+	</h3>
+	<a class="btn btn-medium btn-primary" href="/movie/edit/<%= movie.id %>">
+		Edit
+	</a>
+
+</div>

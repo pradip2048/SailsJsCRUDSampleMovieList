@@ -1,0 +1,15 @@
+<h3><a href="/movie">Movie List</a></h3>
+<form action="/movie/create" method="POST" id="sign-up-form" class="form-signin">
+	<h2 class="form-signin-heading">insert movie</h2>
+
+	
+
+	<input type="text" class="form-control" placeholder="Movie Title" name="title"> 
+	<input type="date" class="form-control" placeholder="Release Date" name="release_date">
+	<input type="time" class="form-control" placeholder="duration" name="duration">
+	<input type="text" class="form-control" placeholder="genere" name="genere">
+	<input type="text" class="form-control" placeholder="Synopsis" name="Synopsis"><br/>
+
+	<input type="submit" class="btn btn-lg btn-primary btn-block" value="Insert New Movie"/>
+	<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+</form>
